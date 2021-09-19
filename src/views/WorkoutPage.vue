@@ -11,9 +11,9 @@
 import WorkoutList from '../components/WorkoutList.vue';
 
 export default {
-  name: "Home",
+  name: "Workout",
   components: {
-    WorkoutList
+    WorkoutList,
   }
 };
 </script>

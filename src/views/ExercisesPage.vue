@@ -1,19 +1,18 @@
 <template>
   <el-container>
     <el-main width="400px">
-      <workout-list>
-      </workout-list>
+      <exercises-list />
     </el-main>
   </el-container>
 </template>
 
 <script>
-import WorkoutList from '../components/WorkoutList.vue';
+import ExercisesList from '../components/ExercisesList.vue';
 
 export default {
-  name: "Home",
+  name: "Exercises",
   components: {
-    WorkoutList
+    ExercisesList,
   }
 };
 </script>

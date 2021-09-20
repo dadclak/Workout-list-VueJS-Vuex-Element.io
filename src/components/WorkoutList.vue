@@ -25,48 +25,48 @@
         </div>
         <div>
             <el-card class="box-card workout-list" v-if="allWorkoutList.length">
-              <div v-if="filterList.length">
-                <div v-for="(w, idx) in filterList" :key="w.id">
-                  <el-row :gutter="20">
-                    <el-col :span="2">
-                      <div class="grid-content bg-purple">
-                        <div>
-                          <el-checkbox
-                            :disabled="!isCompletedExercises(idx)"
-                            v-model="w.completed"
-                            @change="updateWorkoutList(idx)"
-                            border
-                          ></el-checkbox>
+                <div v-if="filterList.length">
+                    <div v-for="(w, idx) in filterList" :key="w.id">
+                    <el-row :gutter="20">
+                        <el-col :span="2">
+                        <div class="grid-content bg-purple">
+                            <div>
+                            <el-checkbox
+                                :disabled="!isCompletedExercises(idx)"
+                                v-model="w.completed"
+                                @change="updateWorkoutList(idx)"
+                                border
+                            ></el-checkbox>
+                            </div>
                         </div>
-                      </div>
-                    </el-col>
-                    <el-col :span="20">
-                      <router-link :to="{name:'Exercises', params:{id:idx}}" class="link">
-                        <div class="grid-content title">
-                          <span>{{w.title}}</span>
+                        </el-col>
+                        <el-col :span="20">
+                        <router-link :to="{name:'Exercises', params:{id:idx}}" class="link">
+                            <div class="grid-content title">
+                            <span>{{w.title}}</span>
+                            </div>
+                        </router-link>
+                        </el-col>
+                        <el-col :span="2">
+                        <div class="grid-content bg-purple">
+                            <el-button
+                            @click="removeItem(w.id)"
+                            type="danger"
+                            icon="el-icon-delete"
+                            size="small"
+                            circle
+                            ></el-button>
                         </div>
-                      </router-link>
-                    </el-col>
-                    <el-col :span="2">
-                      <div class="grid-content bg-purple">
-                        <el-button
-                          @click="removeItem(w.id)"
-                          type="danger"
-                          icon="el-icon-delete"
-                          size="small"
-                          circle
-                        ></el-button>
-                      </div>
-                    </el-col>
-                  </el-row>
+                        </el-col>
+                    </el-row>
+                    </div>
                 </div>
-              </div>
-              <div v-else class="info">
-                  <el-result icon="info" :title="filter ? 'No completed' : 'All completed' "/>
+                <div v-else class="info">
+                    <el-result icon="info" :title="filter ? 'No completed' : 'All completed' "/>
                 </div>
             </el-card>
             <div v-else class="info">
-              <el-result icon="info" title="No workouts" subTitle="Please add workouts" />
+                <el-result icon="info" title="No workouts" subTitle="Please add workouts" />
             </div>
         </div>
     </el-card>

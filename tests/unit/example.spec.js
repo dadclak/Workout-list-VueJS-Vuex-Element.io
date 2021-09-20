@@ -1,12 +1,10 @@
-import { shallowMount } from "@vue/test-utils";
-import HelloWorld from "@/components/HelloWorld.vue";
+import Vue from "vue";
+import { mount, shallowMount } from "@vue/test-utils";
+import ExercisesList from "../../src/components/ExercisesList";
 
-describe("HelloWorld.vue", () => {
-  it("renders props.msg when passed", () => {
-    const msg = "new message";
-    const wrapper = shallowMount(HelloWorld, {
-      propsData: { msg },
-    });
-    expect(wrapper.text()).toMatch(msg);
+describe("ExercisesList.vue", () => {
+  it("renders objects exercises", () => {
+    const wrapper = mount(ExercisesList);
+    expect(wrapper.text()).toContain('Exercises');
   });
 });

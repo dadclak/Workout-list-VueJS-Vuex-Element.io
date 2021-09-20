@@ -1,9 +1,9 @@
 <template>
-  <el-container>
-    <el-main width="400px">
-      <exercises-list />
-    </el-main>
-  </el-container>
+    <el-container>
+        <el-main width="400px">
+            <exercises-list />
+        </el-main>
+    </el-container>
 </template>
 
 <script>

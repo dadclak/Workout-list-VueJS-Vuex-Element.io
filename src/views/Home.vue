@@ -1,10 +1,10 @@
 <template>
-  <el-container>
-    <el-main width="400px">
-      <workout-list>
-      </workout-list>
-    </el-main>
-  </el-container>
+    <el-container>
+        <el-main width="400px">
+            <workout-list>
+            </workout-list>
+        </el-main>
+    </el-container>
 </template>
 
 <script>
